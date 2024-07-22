@@ -1,4 +1,3 @@
-
 # Diabetes Classification Project Documentation
 
   
@@ -81,7 +80,6 @@ This project aims to build a machine learning model to classify individuals as d
     profile.to_file("analysis_report.html")
 
 The profiling report generated provides a comprehensive overview of the dataset, including distributions, missing values, correlations,  and more.
-
   
 
 ### Basic Exploration
@@ -115,13 +113,21 @@ The profiling report generated provides a comprehensive overview of the dataset,
     plt.figure(figsize  =  (16,10))
     sns.heatmap(df.corr(),  annot=True)
     plt.show()
+    
+![heatmap](https://github.com/user-attachments/assets/2f947c33-1030-47fe-a616-628c01549c2a)
 
     sns.countplot(x='Diabetes_binary',  data=df)
     plt.title("Class Distribution of Diabetes_binary")
     plt.show()
 
+![output](https://github.com/user-attachments/assets/fc1d293d-583a-46c6-8739-b13a39c7c9bb)
 
-  
+    plt.figure(figsize=(12,  8))
+    df.corr()['Diabetes_binary'].sort_values().plot(kind='bar')
+    plt.title('Correlation with Diabetes_binary')
+    plt.show()
+    
+![output](https://github.com/user-attachments/assets/948ee57c-fccb-4a2b-a4e4-9c026df020fd)
 
 ### Create a mask
     mask  = np.triu(np.ones_like(corr,  dtype=bool))
@@ -132,6 +138,8 @@ The profiling report generated provides a comprehensive overview of the dataset,
     plt.figure(figsize=(15,  12))
     sns.heatmap(corr,  mask=mask,  center=0,  annot=True,  fmt='.2f',  square=True,  cmap=cmap)
     plt.show()
+    
+![output](https://github.com/user-attachments/assets/56db6445-8511-4ac3-b42c-ac3b5aa2cc4e)
 
   
 
@@ -154,9 +162,9 @@ The dataset does not contain any missing values but has duplicated rows which we
 ### Scaling Data
 Various scalers were used to handle the data:
 
-• StandardScaler
-• MinMaxScaler
-• RobustScaler
+ - StandardScaler
+ - MinMaxScaler
+ - RobustScaler
 
 ### Handling Imbalanced Data
 
@@ -168,14 +176,14 @@ Various scalers were used to handle the data:
 ## Model Building
 Various models were built using the following classifiers:
 
-• Logistic Regression
-• RandomForestClassifier
-• GradientBoostingClassifier
-• KNeighborsClassifier
-• GaussianNB
-• DecisionTreeClassifier
-• XGBClassifier
-• CatBoostClassifier
+ - Logistic Regression
+ - RandomForestClassifier
+ - GradientBoostingClassifier
+ - KNeighborsClassifier
+ - GaussianNB
+ - DecisionTreeClassifier
+ - XGBClassifier
+ - CatBoostClassifier
 
 ### Example Pipeline with Logistic Regression
 
@@ -195,10 +203,10 @@ Various models were built using the following classifiers:
 ## Model Evaluation
 Models were evaluated using metrics such as:
 
-• Accuracy
-• Precision
-• Recall
-• F1 Score
+ - Accuracy
+ - Precision
+ - Recall
+ - F1 Score
 
 ### Example Evaluation Code
 
