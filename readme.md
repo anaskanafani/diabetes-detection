@@ -1,4 +1,4 @@
-# Diabetes Classification Project Documentation
+# Diabetes Binary Classification Project Documentation
 
   
 
