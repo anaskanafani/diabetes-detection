@@ -46,8 +46,6 @@ This project aims to build a machine learning model to classify individuals as d
     
     from sklearn.preprocessing  import StandardScaler, MinMaxScaler, RobustScaler
     
-    from sklearn.linear_model  import LogisticRegression
-    
     from sklearn.pipeline  import Pipeline
     
     from imblearn.over_sampling  import SMOTE
@@ -189,7 +187,7 @@ Various models were built using the following classifiers:
 
     pipeline = Pipeline([
     ('scaler', StandardScaler()),
-    ('classifier', LogisticRegression())
+    ('classifier', RandomForestClassifier())
     ])
     
     param_grid  =  {
